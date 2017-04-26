@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Rhythmic colors</string>
+    <string name="points">Points:</string>
+    <string name="new_game">New Game</string>
+    <string name="color_schemes">Color schemes</string>
+    <string name="exit">Exit</string>
+    <string name="color_scheme1">Primary</string>
+    <string name="color_scheme2">Spring</string>
+    <string name="color_scheme3">Summer</string>
+    <string name="color_scheme4">Autumn</string>
+    <string name="color_scheme5">Winter</string>
+    <string name="color_scheme6">Neon</string>
+</resources>

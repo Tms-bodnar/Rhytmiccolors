@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/tvPoints"
+        android:gravity="center"
+        android:text="@string/points"/>
+
+        <TextView
+            android:layout_below="@id/tvPoints"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:id="@+id/tvCountdown"/>
+        <LinearLayout
+        android:layout_below="@id/tvCountdown"
+
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="bottom"
+        android:columnCount="2"
+        android:orientation="horizontal"
+        >
+
+            <ImageView
+            android:layout_margin="3dp"
+            android:id="@+id/button2"
+            android:layout_column="0"
+            android:layout_width="300dp"
+            android:src="@drawable/prim2"
+            android:layout_gravity="end"
+            android:onClick="onClick2"
+                android:layout_height="wrap_content"
+
+
+          />
+
+            <ImageView
+                android:layout_margin="3dp"
+                android:id="@+id/button1"
+                android:layout_column="1"
+        android:layout_gravity="end"
+                android:src="@drawable/prim5"
+
+                android:onClick="onClick1"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/points"
+            android:gravity="center"
+            android:layout_toRightOf="@+id/tvPoints"
+            android:layout_toEndOf="@+id/tvPoints"
+            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp" />
+
+        <AdapterViewFlipper
+            android:id="@+id/simpleAdapterViewFlipper"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_toRightOf="@id/points">
+
+        </AdapterViewFlipper>
+
+    </RelativeLayout>
+</LinearLayout>

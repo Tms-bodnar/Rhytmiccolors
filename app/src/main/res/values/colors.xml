@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="prim1">#3F51B5</color>
+    <color name="prim2">#F44336</color>
+    <color name="prim3">#9E9E9E</color>
+    <color name="prim4">#000000</color>
+    <color name="prim5">#FFFFFF</color>
+    <color name="prim6">#2196F3</color>
+    <color name="prim7">#E91E63</color>
+    <color name="prim8">#9C27B0</color>
+
+    <color name="spring1">#ff6b6b</color>
+    <color name="spring2">#ffe66a</color>
+    <color name="spring3">#74ff70</color>
+    <color name="spring4">#d99ef7</color>
+    <color name="spring5">#f78ff0</color>
+    <color name="spring6">#ff7fa3</color>
+    <color name="spring7">#fcd079</color>
+    <color name="spring8">#919eff</color>
+
+</resources>
