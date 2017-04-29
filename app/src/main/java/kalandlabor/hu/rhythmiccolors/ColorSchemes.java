@@ -18,8 +18,8 @@ public class ColorSchemes extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.color_schemes);
-        findViewById(R.id.button1).setOnClickListener(this);
-        findViewById(R.id.button2).setOnClickListener(this);
+        findViewById(R.id.button11).setOnClickListener(this);
+        findViewById(R.id.button21).setOnClickListener(this);
         findViewById(R.id.button3).setOnClickListener(this);
         findViewById(R.id.button4).setOnClickListener(this);
         findViewById(R.id.button5).setOnClickListener(this);
@@ -30,7 +30,12 @@ public class ColorSchemes extends AppCompatActivity implements View.OnClickListe
 //        int color1 = ((ColorDrawable) findViewById(R.id.button1).getBackground()).getColor();
         int btnId = view.getId();
         switch(btnId){
-            case R.id.button1 :  game(view); break;
+            case R.id.button11 :  game(view); break;
+            case R.id.button21 :  game(view); break;
+            case R.id.button3 :  game(view); break;
+            case R.id.button4 :  game(view); break;
+            case R.id.button5 :  game(view); break;
+            case R.id.button6 :  game(view); break;
 
         }
 
