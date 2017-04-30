@@ -45,7 +45,7 @@ public class ColorSchemes extends AppCompatActivity implements View.OnClickListe
 
     public void game(View view) {
         Intent gameIntent = new Intent(this,Game.class);
-
+        gameIntent.putExtra("ColorButton",2);
         startActivity(gameIntent);
     }
 }

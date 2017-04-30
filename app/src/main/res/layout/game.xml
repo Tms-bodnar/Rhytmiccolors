@@ -10,13 +10,6 @@
         android:background="@android:color/white">
 
         <TextView
-            android:id="@+id/tvPoints"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:text="@string/points" />
-
-        <TextView
             android:id="@+id/points"
             android:layout_width="100dp"
             android:layout_height="50dp"
@@ -27,50 +20,73 @@
             android:gravity="center" />
 
         <TextView
+            android:id="@+id/tvPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/points" />
+
+        <TextView
             android:id="@+id/tvCountdown"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_toRightOf="@+id/points"
             android:gravity="center" />
 
-
+<LinearLayout
+    android:id="@+id/linlay1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/tvCountdown"
+    android:layout_alignRight="@id/tvCountdown">
         <ViewFlipper
             android:id="@+id/simpleViewFlipper"
             android:layout_height="50dp"
-            android:layout_below="@id/tvCountdown"
-            android:layout_alignRight="@id/tvCountdown"
             android:layout_width="match_parent" />
+</LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_below="@+id/simpleViewFlipper"
-            android:layout_gravity="bottom"
-            android:columnCount="2"
-            android:orientation="horizontal">
-
+            android:orientation="horizontal"
+            android:id="@+id/linlay2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/tvPoints"
+            android:gravity="left"
+            >
             <ImageView
-                android:id="@+id/button2"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_gravity="end"
-                android:layout_margin="3dp"
-                android:onClick="onClick2"
-                android:src="@drawable/prim3"
-
-
+                android:id="@+id/img1"
+                android:visibility="gone"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/prim7"
                 />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/linlay3"
+            android:layout_height="200dp"
+            android:layout_below="@+id/linlay2"
+            >
 
             <ImageView
                 android:id="@+id/button1"
+                android:src="@drawable/prim1"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_column="1"
+                android:layout_gravity="end"
+                android:layout_margin="3dp"
+                android:onClick="onClick2"
+                />
+
+            <ImageView
+                android:id="@+id/button2"
+                android:src="@drawable/prim2"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_margin="3dp"
                 android:onClick="onClick1"
-                android:src="@drawable/prim2" />
+                 />
         </LinearLayout>
 
     </RelativeLayout>

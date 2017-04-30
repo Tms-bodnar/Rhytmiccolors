@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity {
     public void colorSchemes(View view){
         Intent colorSchemesIntent = new Intent(this,ColorSchemes.class);
         startActivity(colorSchemesIntent);
-        Log.d("Start", "Start");
-
     }
 
 
