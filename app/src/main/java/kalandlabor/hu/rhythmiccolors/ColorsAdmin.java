@@ -18,12 +18,13 @@ public class ColorsAdmin {
         this.colorList = colorList;
     }
 
-    public static List<Integer> ListAdmin(Integer[] colorArray, int num, int size) {
-        List<Integer> shuffledList = new ArrayList<>(num * size);
+    public static List<Integer> ListAdmin(Integer[] colorArray, int size) {
+        List<Integer> shuffledList = new ArrayList<>(size);
+
         for (int i = 0; i < size; i++) {
-            for (int j = 0; j < num; j++) {
+            for (int j = 0; j < colorArray.length; j++)
                 shuffledList.add(colorArray[j]);
-            }
+
         }
         Collections.shuffle(shuffledList);
         return shuffledList;

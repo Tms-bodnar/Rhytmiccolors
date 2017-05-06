@@ -3,7 +3,6 @@ package kalandlabor.hu.rhythmiccolors;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void colorSchemes(View view){
-        Intent colorSchemesIntent = new Intent(this,ColorSchemes.class);
+        Intent colorSchemesIntent = new Intent(this,Description.class);
         startActivity(colorSchemesIntent);
     }
 

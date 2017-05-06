@@ -1,19 +1,12 @@
 
 package kalandlabor.hu.rhythmiccolors;
 
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
+import android.widget.GridLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import java.util.List;
@@ -28,128 +21,80 @@ import static kalandlabor.hu.rhythmiccolors.R.layout.game;
 public class Game extends AppCompatActivity {
     private ViewFlipper simpleViewFlipper;
     Integer[] images = {R.drawable.prim1, R.drawable.prim2, R.drawable.prim3, R.drawable.prim4,
-                    R.drawable.prim5, R.drawable.prim6,R.drawable.prim7,R.drawable.prim8};
-
+            R.drawable.prim5, R.drawable.prim6, R.drawable.prim7, R.drawable.prim8};
+    List<Integer> colorList;
+    int size = 400;
     private int flipInterval = 1000;
-    private int points = 0;
-    Intent intent;
-    int level;
-    int listParam;
+
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(game);
-        intent = getIntent();
-        level = intent.getIntExtra("ColorButton", 2);
-        listParam = 6;
-
-        final TextView count = (TextView) findViewById(R.id.tvCountdown);
-        count.setTextSize(40);
-        count.setTextColor(Color.RED);
-        Toast leveltoast = new Toast(this);
-        leveltoast.makeText(this, ""+level/2+" level with "+level+" colors!",Toast.LENGTH_LONG).show();
 
 
-        new CountDownTimer(5000, 1000) {
-            public void onTick(long millisUntilFinished) {
-                count.setText("" + (millisUntilFinished / 1000 - 1));
-                if (millisUntilFinished < 2000) {
-                    count.setText("GO!");
 
-                    flipper();
 
-                }
-            }
-            public void onFinish() {
-            }
-        }.start();
+        final View btnView1 = findViewById(R.id.btnView1);
+        btnView1.setTag(R.drawable.prim1);
+        View btnView2 = findViewById(R.id.btnView2);
+        btnView2.setTag(R.drawable.prim2);
+        final View btnView3 = findViewById(R.id.btnView3);
+        btnView3.setTag(R.drawable.prim3);
+        View btnView4 = findViewById(R.id.btnView4);
+        btnView4.setTag(R.drawable.prim4);
+        View btnView5 = findViewById(R.id.btnView5);
+        btnView5.setTag(R.drawable.prim5);
+        final View btnView6 = findViewById(R.id.btnView6);
+        btnView6.setTag(R.drawable.prim6);
+        View btnView7 = findViewById(R.id.btnView7);
+        btnView7.setTag(R.drawable.prim7);
+        final View btnView8 = findViewById(R.id.btnView8);
+        btnView8.setTag(R.drawable.prim8);
 
-        final View btn1 = findViewById(R.id.button1);
-        btn1.setTag(R.drawable.prim1);
-        btn1.setOnClickListener(new View.OnClickListener() {
-            private boolean clickable = true;
-            public void reset(){
-                clickable= true;
-            }
+        GridLayout leftBtnGroup = (GridLayout) findViewById(R.id.gridLay1);
+        GridLayout rightBtnGroup = (GridLayout) findViewById(R.id.gridLay2);
+        final GridLayout middleGridLayout = (GridLayout) findViewById(R.id.gridLay3);
+
+        flipper();
+        btnView1.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                if(clickable){
-                    clickable= false;
-                }
-                if(btn1.getTag().equals(simpleViewFlipper.getCurrentView().getTag())){
-                    LinearLayout ll1 = (LinearLayout) findViewById(R.id.linlay1);
-                    LinearLayout ll2 = (LinearLayout) findViewById(R.id.linlay2);
-                    if(ll1.getWidth()>ll1.getHeight()) {
-                        points += 1;
-                        count.setText("" + points);
 
-                        int width1 = ll1.getWidth() - ll1.getHeight();
-                        int width2 = ll2.getWidth() + ll2.getHeight();
-                        ll1.getLayoutParams().width = width1;
-                        ll1.requestLayout();
+                if (btnView1.getTag().equals(simpleViewFlipper.getCurrentView().getTag())) {
+                    ImageView iv = new ImageView(Game.this);
+                    iv.setImageResource(R.drawable.prim1);
+                    middleGridLayout.removeAllViews();
+                    middleGridLayout.addView(iv);
 
-//                        ll2.getLayoutParams().width= width2;
-//                        ll2.requestLayout();
-                        Log.d("grid", ""+ll2.getLayoutParams().width);
-//                        ImageView vv = new ImageView(Game.this.getApplicationContext());
-//                        vv.setImageResource(R.drawable.prim2);
-//                        vv.setScaleType(ImageView.ScaleType.FIT_START);
-//                        ll2.addView(vv);
 
-                    }else{
-                        finish();
-                    }
                 }
             }
-
         });
-        final View btn2 = findViewById(R.id.button2);
-        btn2.setTag(R.drawable.prim2);
-        btn2.setOnClickListener(new View.OnClickListener() {
-            private boolean clickable = true;
-            public void reset(){
-                clickable= true;
-            }
+
+        btnView6.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                if (clickable) {
-                    clickable = false;
-                }
-                if (btn2.getTag().equals(simpleViewFlipper.getCurrentView().getTag())) {
-                    LinearLayout ll1 = (LinearLayout) findViewById(R.id.linlay1);
-                    LinearLayout ll2 = (LinearLayout) findViewById(R.id.linlay2);
-                    if (ll1.getWidth() > ll1.getHeight()) {
-                        points += 1;
-                        count.setText("" + points);
 
-                        int width1 = ll1.getWidth() - ll1.getHeight();
-                        int width2 = ll2.getWidth() + ll2.getHeight();
-                        ll1.getLayoutParams().width = width1;
-                        ll1.requestLayout();
-                        ll2.getLayoutParams().width= width2;
-                        ll2.requestLayout();
-                        Log.d("Flipper", ""+ll1.getLayoutParams().width);
-                        Log.d("grid", ""+ll2.getLayoutParams().width);
-//                        ImageView vv = new ImageView(Game.this.getApplicationContext());
-//                        vv.setImageResource(R.drawable.prim3);
-//                        vv.setScaleType(ImageView.ScaleType.FIT_START);
-//                        ll2.addView(vv);
+                if (btnView6.getTag().equals(simpleViewFlipper.getCurrentView().getTag())) {
 
-                    } else {
-                        finish();
-                    }
+                    ImageView iv = new ImageView(Game.this);
+                    iv.setImageResource(R.drawable.prim6);
+                    middleGridLayout.removeAllViews();
+                    middleGridLayout.addView(iv);
+
                 }
             }
         });
     }
-    public void flipper(){
-        List<Integer> colorList = ColorsAdmin.ListAdmin(images,level,listParam);
-        Log.d("level,listParam", ""+level+ " "+listParam);
-        Log.d("listsize:", ""+colorList.size());
+
+    public void flipper() {
+        colorList = ColorsAdmin.ListAdmin(images, size);
         simpleViewFlipper = (ViewFlipper) findViewById(R.id.simpleViewFlipper);
-        for (int i = 0; i<colorList.size(); i++){
+        for (int i = 0; i < colorList.size(); i++) {
             ViewGroup.LayoutParams lp = simpleViewFlipper.getLayoutParams();
             ImageView imageView = new ImageView(this);
             imageView.setImageResource(colorList.get(i));
@@ -158,39 +103,11 @@ public class Game extends AppCompatActivity {
             simpleViewFlipper.addView(imageView);
             simpleViewFlipper.setLayoutParams(lp);
             simpleViewFlipper.setFlipInterval(flipInterval);
-            simpleViewFlipper.setInAnimation(this,R.anim.right_in);
-            Log.d("i=",""+i);
-
+            simpleViewFlipper.setInAnimation(this, R.anim.right_in);
         }
-        Log.d("childcount",""+simpleViewFlipper.getChildCount());
-
         simpleViewFlipper.startFlipping();
-        simpleViewFlipper.getInAnimation().setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                Log.d("displayed", "" + simpleViewFlipper.getDisplayedChild());
-                if (simpleViewFlipper.getDisplayedChild() == simpleViewFlipper.getChildCount() - 1) {
-                    simpleViewFlipper.stopFlipping();
-                }
-            }
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
-        Log.d("displayed",""+simpleViewFlipper.getDisplayedChild());
-
-
-
     }
-
-
-    }
+}
 
 
 
