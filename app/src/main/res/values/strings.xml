@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">Rhythmic colors</string>
-    <string name="points">Points:</string>
+    <string name="points">Points: 78</string>
     <string name="new_game">New Game</string>
     <string name="color_schemes">Color schemes</string>
     <string name="exit">Exit</string>
     <string name="start">Start</string>
-    <string name="description">Press the right color and highlight the picture!</string>
+    <string name="speed">Speed: 900ms </string>
+    <string name="description">Press the right color, get points and try to increase speed, and be as fast as Flash!</string>
 </resources>

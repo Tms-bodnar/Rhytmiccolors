@@ -28,7 +28,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnStart"
             android:text="@string/start"
-            android:onClick="exit"/>
+            android:onClick="exit"
+            android:gravity="center_horizontal"/>
 
     </GridLayout>
 </LinearLayout>
