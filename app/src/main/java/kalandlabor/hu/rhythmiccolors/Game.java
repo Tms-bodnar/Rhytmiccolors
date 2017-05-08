@@ -220,36 +220,79 @@ public class Game extends AppCompatActivity {
                 }
             }
         });
+
+
+
+    }
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        startActivity(new Intent(Game.this, Description.class));
+        finish();
     }
 
     private int setDuration(int points){
-        Toast levelToast = new Toast(this);
+
         if(points<=80) {
             if (points >= 10 && points < 20) {
                 duration = 900;
-                levelToast.makeText(this, "Excellent!", Toast.LENGTH_LONG).show();
+
             } else if (points >= 20 && points < 30) {
-                duration = 850;
-                levelToast.makeText(this, "You are really fast!! ", Toast.LENGTH_LONG).show();
+                duration = 875;
+
             } else if (points >= 30 && points < 40) {
-                duration = 800;
-                levelToast.makeText(this, "OMG, damn good!!", Toast.LENGTH_LONG).show();
+                duration = 850;
+
             } else if (points >= 40 && points < 50) {
-                duration = 750;
-                levelToast.makeText(this, "Damn fast!!", Toast.LENGTH_LONG).show();
+                duration = 825;
+
             } else if (points >= 50 && points < 60) {
-                duration = 700;
-                levelToast.makeText(this,"F.ckin' speedy", Toast.LENGTH_LONG).show();
+                duration = 775;
+
             } else if (points >= 60 && points < 70) {
-                duration = 650;
-                levelToast.makeText(this, "Are you Flash?", Toast.LENGTH_LONG).show();
+                duration = 700;
+
             } else if (points >= 70 && points < 80) {
-                duration=600;
-                levelToast.makeText(this, "Are you Flash? Increase speed +10%", Toast.LENGTH_LONG).show();
+                duration=650;
+
             }
-        }else{
-            simpleViewFlipper.stopFlipping();
-            levelToast.makeText(this, "OK, i believe now you are Flash!", Toast.LENGTH_LONG).show();
+        }
+        switch (points){
+            case 10: case 11:
+                Toast level1Toast = new Toast(this);
+                level1Toast.makeText(this, "Excellent!", Toast.LENGTH_SHORT).show();
+                break;
+            case 20: case 21:
+                Toast level2Toast = new Toast(this);
+                level2Toast.makeText(this, "You are really fast!! ", Toast.LENGTH_SHORT).show();
+                break;
+            case 30: case 31:
+                Toast level3Toast = new Toast(this);
+                level3Toast.makeText(this, "OMG, damn good!!", Toast.LENGTH_SHORT).show();
+                break;
+            case 40: case 41:
+                Toast level4Toast = new Toast(this);
+                level4Toast.makeText(this, "Damn fast!!", Toast.LENGTH_SHORT).show();
+                break;
+            case 50: case 51:
+                Toast level5Toast = new Toast(this);
+                level5Toast.makeText(this,"F.ckin' speedy", Toast.LENGTH_SHORT).show();
+                break;
+            case 60:case 61:
+                Toast level6Toast = new Toast(this);
+                level6Toast.makeText(this, "Are you Flash?", Toast.LENGTH_SHORT).show();
+                break;
+            case 70:case 71:
+                Toast level7Toast = new Toast(this);
+                level7Toast.makeText(this, "Are you Flash? Increase speed +10%", Toast.LENGTH_SHORT).show();
+                break;
+            case 80: case 81:
+                simpleViewFlipper.stopFlipping();
+                Toast levelToast = new Toast(this);
+                levelToast.makeText(this, "OK, i believe now you are Flash!", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(Game.this, Description.class));
+                finish();
+                break;
         }
         return duration;
     }
